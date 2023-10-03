@@ -32,6 +32,3 @@ git bash (terminal padrão do git).
 git --version (saber a versão do meu git).
 git status; (verificando tudo que EU mexi no projeto na "branch" atual, seja ela o "master" ou qualquer outra).
 
-REPO PUBLICO que iremos trabalhar na próxima aula: https://github.com/xikaojr/iwtraining
-
-git clone git@github.com:xikaojr/iwtraining.git;
