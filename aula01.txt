@@ -1,0 +1,37 @@
+Acessar github.com (fazer login).
+
+Criar novo repositório (Public ou privado).
+
+Abrir o terminal (seja git bash ou via vscode) -> Executar:
+
+//Configurando login e senha
+git config --global user.name "Seu nome";
+git config --global user.email "Seu email";
+
+Criar pasta do projeto e acessa-la.
+Executar:
+
+git init; (inicializei um projeto para o git).
+
+git remote add origin git@github.com:nome_do_seu_usuario/nome_do_seu_projeto (atribuindo endereço do repositório no github para sua pasta).
+
+git branch -M master (tornando a branch principal do projeto).
+
+
+### Criar arquivo na raiz do projeto com o nome README.md ###
+
+executar as seguintes instruções:
+
+git add .; (adicionando ao "track" tudo aquilo que eu mexi e foi criado como novo, seja arquivo ou pasta).
+git commit -am "Criando meu primeiro repo e subindo meu readme"; (assinando os arquivos e colocando uma mensagem)
+git push origin master; (publicando os arquivos e as alterações para o branch master)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+git bash (terminal padrão do git).
+git --version (saber a versão do meu git).
+git status; (verificando tudo que EU mexi no projeto na "branch" atual, seja ela o "master" ou qualquer outra).
+
+REPO PUBLICO que iremos trabalhar na próxima aula: https://github.com/xikaojr/iwtraining
+
+git clone git@github.com:xikaojr/iwtraining.git;
