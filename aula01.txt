@@ -32,3 +32,8 @@ git bash (terminal padrão do git).
 git --version (saber a versão do meu git).
 git status; (verificando tudo que EU mexi no projeto na "branch" atual, seja ela o "master" ou qualquer outra).
 
+
+*Vou deixar 2 links aqui como referência que eu preciso que vocês leiam atentamente, pois, vamos usar muito os termos*
+
+https://www.atlassian.com/br/git/glossary
+https://www.atlassian.com/br/git/glossary/terminology
