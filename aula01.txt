@@ -1,3 +1,7 @@
+INSTALANDO GIT&GIT BASH NO SEU POWERSHELL OU CMD
+
+winget install --id Git.Git -e --source winget
+
 Acessar github.com (fazer login).
 
 Criar novo repositório (Public ou privado).
