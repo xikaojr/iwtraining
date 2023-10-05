@@ -9,5 +9,3 @@
 5º Você irá adicionar, comitar e publicar as alterações diretamente na sua branch.
 
 Após isso o exercício estará completo, e irevei revisar e usar "commits" para fazer a correção junto com vocês.
-
-!
