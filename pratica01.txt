@@ -1,3 +1,8 @@
+-- CLONAR O REPOSITÓRIO IWTRANING EM UMA PASTA VAZIA (EX: PROJETOS) --
+git clone git@github.com:xikaojr/iwtraining.git
+
+APÓS O CLONE, SERÁ CRIADO UMA PASTA COM O NOME iwtraning, acesse esta pasta e começe o tra>
+
 1º criar uma branch com seu nome (sem acento, sem caracter especial, sem espaco sem nada: exemplo: xikaojr)
 
 2º após criar e acessar sua branch, você irá criar uma pasta também com o seu nome seguindo o mesmo padrão da branch.
