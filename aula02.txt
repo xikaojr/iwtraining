@@ -11,3 +11,4 @@ exemplo: git branch -D matheus;
 -- criar a pasta com seu nome
 -- criar me.html (vamos criar o curriculo (quem já tiver pode aplicar o html e faezr o push pra própria branch))
 -- fazer o processo para publicar branch (git add .; git commit -am "Mensagem"; git push origin nome_da_branch;) 
+-- Me avisar no whatsapp quando você publicar sua branch com seu curriculo.
