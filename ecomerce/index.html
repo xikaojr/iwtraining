@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loja de Informática - Projeto Bootstrap</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- início do menu -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logotipo-informatica.png" class="col-12 col-sm-4 col-md-4 col-lg-4" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="produtos.html">Produtos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Fale Conosco
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="mailto:cra@iwtraining.com.br" target="_blank">E-Mail</a></li>
+                                <li><a class="dropdown-item" href="https://wa.me/5585974012885" target="_blank">Whatsapp</a></li>
+                                <li><a class="dropdown-item" href="tel:+5585974012885" target="_blank">Ligação</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="https://www.google.com.br/maps/dir/-3.7581552,-38.5373614/R.+Carolino+de+Aquino,+445+-+F%C3%A1tima,+Fortaleza+-+CE,+60050-140/@-3.7542074,-38.5364009,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x7c748dff8e034d3:0x9fc6b6cfd34e403c!2m2!1d-38.5268093!2d-3.7508673?hl=pt-BR" target="_blank">Ir ao Local</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Procure no Site" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit">Procurar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- final do menu -->
+
+        <!-- início do banner -->
+        <div class="row">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/destaques/banner-001.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/destaques/banner-002.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/destaques/banner-003.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/destaques/banner-004.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Voltar</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Avançar</span>
+                </button>
+            </div>
+        </div>
+        <!-- final do banner -->
+
+        <!-- início dos produtos -->
+        <div class="container">
+            <div class="row">
+                <h1 class="mt-5">Produtos em Destaque</h1>
+            </div>
+            <div class="row">
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/monitor.jfif" class="card-img-top"  alt="...">
+                        <h5>Monitor</h5>
+                        <h6>R$ 11.789,97</h6>
+                        <p class="card-text">Impressionante qualidade visual. Tela curva 1000R: O design em uma nova...</p>
+                        <a href="produtos/monitor.html" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/teclado.jpg" class="card-img-top" alt="...">
+                        <h5>Teclado</h5>
+                        <h6>R$ 121,99</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/mouse.webp" class="card-img-top" alt="...">
+                        <h5>Mouse</h5>
+                        <h6>R$ 87.70</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/gabinete.jpg" class="card-img-top" alt="...">
+                        <h5>Gabinete</h5>
+                        <h6>R$ 549,12</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/caixadesom.jpg" class="card-img-top" alt="...">
+                        <h5>Caixa de Som</h5>
+                        <h6>R$ 237,20</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/headset.webp" class="card-img-top" alt="...">
+                        <h5>Headset</h5>
+                        <h6>R$ 319,90</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/impressora.jpg" class="card-img-top" alt="...">
+                        <h5>Impressora</h5>
+                        <h6>R$ 417,70</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="card col-10 offset-1 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
+                    <div class="card-body">
+                        <img src="images/produtos/webcam.jpg" class="card-img-top" alt="...">
+                        <h5>Webcam</h5>
+                        <h6>R$ 237,20</h6>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consect tetur adipisicing elit premium plus.</p>
+                        <a href="#" class="btn btn-warning">Mais Informações</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- final dos produtos -->
+
+        <!-- início do footer / rodapé -->
+        <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="bootstrap" viewBox="0 0 118 118">
+            <defs><style>.cls-1{fill:#fff;}</style></defs>
+            <polygon class="cls-1" points="59.73 3.88 0 62.39 64.34 125.66 91.62 98.43 39.19 77.88 59.73 3.88"/>
+            <path class="cls-1" d="M65.3,0C71.43,18.39,77.62,37,84,56.1L59.39,49.38c-.39,7.24-.65,13.89-1.14,20.52a4.18,4.18,0,0,0,2.6,4.51c11,6,21.93,12.13,32.82,18.33,2,1.14,3.18,1.07,4.84-.62,9.34-9.49,18.81-18.86,28.23-28.27.57-.57,1.05-1.23,1.26-1.47Z" transform="translate(0 0)"/>
+        </symbol>
+        </svg>
+        <div class="container-fluid bg-dark text-light">
+          <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p class="col-12 col-md-4 mb-0 text-light copyright">&copy; 2023 Informática</p>
+                <a href="/" class="col-12 col-md-4 d-flex align-items-center justify-content-center mb-0 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <ul class="nav col-md-4 justify-content-end d-none d-lg-flex">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Início</a></li>
+                <li class="nav-item"><a href="produtos.html" class="nav-link px-2 text-light">Produtos</a></li>
+                <li class="nav-item"><a href="mailto:cra@iwtraining.com.br" class="nav-link px-2 text-light">E-Mail</a></li>
+                <li class="nav-item"><a href="https://wa.me/5585974012885" target="_blank" class="nav-link px-2 text-light">Whatsapp</a></li>
+                <li class="nav-item"><a href="tel:+5585974012885" class="nav-link px-2 text-light">Ligação</a></li>
+                </ul>
+            </footer>
+          </div>
+        </div>
+        <!-- fim do footer / rodapé -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>
