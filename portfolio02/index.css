@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:400,700);
+.cv {padding:20px;}
+.cv aside {margin-bottom:60px;}
+.cv aside img {display:block;margin:0 auto;}
+.cv aside h2, .cv h1, .cv h3, .cv h4 {font-family: 'Montserrat', sans-serif;}
+.cv aside h2 {text-align:center;}
+.cv aside h2>span {color:#ff5335;}
+.cv aside h2:after {
+  display:block;
+  content:'{';
+  color:#ff5335;
+  transform:rotate(-90deg) scale(1.6, 2);
+  transform-origin: center;
+  font-size:60px;
+  font-weight:normal;
+}
+.cv aside ul.info{margin-top:30px;}
+.cv aside ul.info a {
+  color:#333;
+  font-family:'Montserrat',sans-serif;
+  margin-bottom:10px;
+  display:block;
+  letter-spacing:-0.1em;
+}
+.cv aside ul.info a:hover {text-decoration:none;}
+.cv aside ul.info a:hover i {background:#B83C26;}
+.cv aside ul.info a>i {
+  background:#ff5335;
+  color:#fff;
+  width:35px;
+  height:35px;
+  border-radius:35px;
+  text-align:center;
+  line-height:35px;
+  margin-right:15px;
+  -webkit-transition:all 200ms linear;
+  -moz-transition:all 200ms linear;
+  -o-transition:all 200ms linear;
+  transition:all 200ms linear;
+}
+.cv section {margin-bottom:30px;}
+.cv p {font-family:'Open Sans',sans-serif;}
+.cv h1, .cv h3, .cv h4 {
+  text-transform:uppercase;
+  font-weight:bold;
+}
+.cv h1:nth-child(1){margin-top:0;}
+.cv h1 {margin:60px 0 30px 0;}
+.cv h3 {font-size:18px;line-height:22px;}
+.cv h4 {font-size:14px;line-height:14px;}
+.cv .skills section {overflow:auto;margin-bottom:0;}
+.cv .skills section p {
+  float:left;
+  max-width:50%;
+  word-break:break-word;
+}
+.cv .skills section span {
+  display:inline-block;
+  width:15px;
+  height:15px;
+  background:#bbb;
+  border-radius:15px;
+  float:right;
+  margin:0 1px;
+}
+.cv .skills section span.full {background:#ff5335;}
