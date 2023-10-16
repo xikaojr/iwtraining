@@ -1,0 +1,28 @@
+*{
+    
+    box-sizing: border-box;
+}
+
+body{
+margin:0;
+}
+
+.navbar{
+
+    height: 200px;
+    background-color: aqua;
+}
+
+.logo{
+    width: 20%;
+    display: flex;
+    flex: row wrap;
+    border: 1px solid blue;
+}
+
+.menu{
+    width: 70%;
+    display: flex;
+    flex: row wrap;
+    border: 1px solid purple;
+}
