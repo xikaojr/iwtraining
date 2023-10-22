@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 1</title>
 </head>
+
 <body>
 
     <!-- 
@@ -29,19 +31,35 @@
 #Promises e Fetch API: Use a Fetch API para fazer uma chamada para uma API pública (como a API do JSONPlaceholder) e exibir os resultados no console.
      -->
 
-     <h1>Exercicios</h1>
-     <h2>exercicio2</h2>
-     <p> #Operadores: Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração, multiplicação e divisão desses números.
+    <h1>Exercicios</h1>
+    <h2>exercicio2</h2>
+    <p> #Operadores: Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração,
+        multiplicação e divisão desses números.
     </p>
 
-    
+
     <script>
-      var nome =  prompt("Digite seu nome")
-      alert("Bem vindo "+nome)
-      var n1 = Number(prompt("Agora digite um número"))
-      alert("Voce digitou "+n1)
-      var n2 = Number(prompt("Agora digite um segundo numero"))
+        //diga seu nome
+        var nome = prompt("Digite seu nome")
+        alert("Bem vindo " + nome)
+        //solicite um numero
+        var n1 = Number(prompt("Agora digite um número"))
+        alert("Voce digitou " + n1)
+        //solicite um segundo numero
+        var n2 = Number(prompt("Digite um segundo numero"))
+        alert("voce digitou " + n2)
+
+        // variáveis de resultados
+        var soma = n1 + n2
+        var subtra = n1 - n2
+        var mult = n1 * n2
+        var divi = n1 / n2
+
+        alert(` Voce digitou ${n1} e ${n2} a soma deles é ${soma}, a subtração de um pelo outro é ${subtra},se multiplicarmos ${n1} por ${n2} temos ${mult} e, se dividirmos um pelo outro temos ${divi}
+
+      `)
     </script>
-    
+
 </body>
+
 </html>
