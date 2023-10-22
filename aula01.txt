@@ -1,4 +1,4 @@
-INSTALANDO GIT&GIT BASH NO SEU POWERSHELL OU CMD
+        INSTALANDO GIT&GIT BASH NO SEU POWERSHELL OU CMD
 
 winget install --id Git.Git -e --source winget
 
