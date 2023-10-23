@@ -19,7 +19,8 @@ git init; (inicializei um projeto para o git).
 
 git remote add origin git@github.com:nome_do_seu_usuario/nome_do_seu_projeto (atribuindo endereço do repositório no github para sua pasta).
 
-git branch -M master (tornando a branch principal do projeto, este comando só é preciso ser rodado 1 vez que é apos dar o git init e adicionar o remote).
+git branch -M master (tornando a branch pri
+ncipal do projeto, este comando só é preciso ser rodado 1 vez que é apos dar o git init e adicionar o remote).
 
 ### Criar arquivo na raiz do projeto com o nome README.md ###
 
