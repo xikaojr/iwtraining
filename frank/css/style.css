@@ -1,28 +1,39 @@
-*{
-    
+* {
+
     box-sizing: border-box;
 }
 
-body{
-margin:0;
+body {
+    margin: 0;
 }
 
-.navbar{
-
-    height: 200px;
+.navbar {
+    display: flex;
+    flex: row wrap;
+    height: 100px;
     background-color: aqua;
 }
 
-.logo{
+.logo {
     width: 20%;
-    display: flex;
-    flex: row wrap;
+    padding: 20px;
+    align-items: center;
+    margin-left: 10%;
+    justify-content: center;
     border: 1px solid blue;
 }
 
-.menu{
+.menu {
+    align-items: center;
+    justify-content: center;
+    text-align: right;
     width: 70%;
-    display: flex;
-    flex: row wrap;
+    margin-right: 10%;
+    padding: 20px;
     border: 1px solid purple;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 20px 16px;
 }
