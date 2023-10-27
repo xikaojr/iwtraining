@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de exercicios de JS</title>
+</head>
+<body>
+    <button onclick="variaveisTiposdeDados()">Variavei e tipos de dados</button>
+    <button onclick="operadores()">Operadores</button>
+    <button onclick="condicoes()">Condições</button>
+    <button onclick="loops()">loops</button>
+    <button onclick="funcoes(12,20)">Funções</button>
+    <button onclick="arrays()">Arrays</button>
+    <button onclick="exibeLivro()">Objetos</button>
+    <button id="btdom" onclick="usandoDOM()">DOM</button>
+    <button onclick="manipulandoString()">Manipulando Strings</button>
+    <button onclick="usandoFetch()">Usando fetch para comsumir uma Rest API</button>
+</body>
+
+    <script>
+        function variaveisTiposdeDados(){
+            let nome = window.prompt("DIGITE O SEU NOME: ");
+            let idade = window.prompt("DIGITE A SUA IDADE: ");
+            let retorno = console.log(`Olá, o meu nome é ${nome} e eu tenho ${idade} anos`)
+        }
+
+        function operadores(){
+            let numero1 = parseFloat(window.prompt("Digite o primeiro numero das operações: "))
+            let numero2 = parseFloat(window.prompt("Digite o segundo numero das operações: ")) 
+            let soma = (numero1+numero2)
+            let subtracao = (numero1-numero2)
+            let multiplicacao = (numero1*numero2)
+            let divisao = (numero1/numero2)
+
+            console.log(`A some é: ${soma}\nA subtração é: ${subtracao}\nA multiplicação é: ${multiplicacao}\nAdivisão é: ${divisao}`)
+        }
+
+        function condicoes(){
+            let idade = parseInt(window.prompt("Digite a sua idade: "))
+            if(idade >= 18){
+                console.log("Parabéns, você ja pode ser preso!")
+            }else if(idade < 18){
+                console.log("você ainda é menor de idade...")
+            }else if(idade != Number){
+                console.log("Digite uma idade valida, mocorongo!")
+            }
+        }
+
+        function loops(){
+            for(let i = 1; i <= 100; i++){
+                console.log(i)
+            }
+        }
+
+        function funcoes(numero1,numero2){
+            let soma = (numero1+numero2);
+            console.log(`A some é: ${soma}`);
+        }
+
+        function arrays(){
+            let frutas = ["Banana", "Uva", "Mamão", "Abacaxi", "Pera"];
+            for(let i = 0; i < frutas.length; i++ ){
+                console.log(frutas[i]);
+            }
+        }
+
+        function livro(titulo,autor,np){
+            let obj = {
+                'titulo': titulo,
+                'autor': autor,
+                'numeroDePaginas': np
+            }
+            return obj;
+
+        }
+
+        function exibeLivro(){
+            var l1 = livro("Harry Potter: e a ordem da fenix", "J.K.Rolling", 1458)
+        console.log(l1.titulo)
+        console.log(l1.autor)
+        console.log(l1.numeroDePaginas)
+
+        }
+
+        
+        function usandoDOM(){
+            let btnDom = document.querySelector('#btdom')
+            btnDom.addEventListener('click', usandoDOM)
+            console.log("Você Clicou no botão do DOM!")
+        }
+
+        function manipulandoString(){
+            let palavra = prompt("Digite uma palavra: ");
+            let separa = palavra.split(" ")
+            
+            
+            separa.map((palavra) => { 
+            console.log(palavra[0].toUpperCase() + palavra.substring(1)); 
+            
+            }).join(" ");
+               
+        }
+        function usandoFetch(){
+            fetch('https://jsonplaceholder.typicode.com/todos')
+                .then(promisse => promisse.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error))
+        }
+    </script>
+</html>
