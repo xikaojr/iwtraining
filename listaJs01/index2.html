@@ -20,21 +20,23 @@
     <pre id="codeContainer">
         <!-- O código JavaScript será exibido aqui -->
 
-        <button onclick="tryIt()">Try it</button>
+        
     </pre>
+    <button onclick="tryIt()">Try it</button>
 </body>
 
 <script>
     function displayCode(functionName) {
         const codeContainer = document.getElementById('codeContainer');
-        codeContainer.innerHTML = '';
+        codeContainer.innerHTML = '';   
 
         const code = getFunctionCode(functionName);
         codeContainer.textContent = code;
     }
 
     function tryIt(){
-        console.log(functionName.lenght)
+        let rodando = document.getElementById('codeContainer')
+            
     }
 
     function getFunctionCode(functionName) {
