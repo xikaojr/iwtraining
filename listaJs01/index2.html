@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercícios de JS</title>
+</head>
+<body>
+    <button onclick="displayCode('variaveisTiposdeDados')">Variáveis e tipos de dados</button>
+    <button onclick="displayCode('operadores')">Operadores</button>
+    <button onclick="displayCode('condicoes')">Condições</button>
+    <button onclick="displayCode('loops')">Loops</button>
+    <button onclick="displayCode('funcoes')">Funções</button>
+    <button onclick="displayCode('arrays')">Arrays</button>
+    <button onclick="displayCode('exibeLivro')">Objetos</button>
+    <button id="btdom" onclick="displayCode('usandoDOM')">DOM</button>
+    <button onclick="displayCode('manipulandoString')">Manipulando Strings</button>
+    <button onclick="displayCode('usandoFetch')">Usando fetch para consumir uma Rest API</button>
+    
+    <pre id="codeContainer">
+        <!-- O código JavaScript será exibido aqui -->
+    </pre>
+</body>
+
+<script>
+    function displayCode(functionName) {
+        const codeContainer = document.getElementById('codeContainer');
+        codeContainer.innerHTML = '';
+
+        const code = getFunctionCode(functionName);
+        codeContainer.textContent = code;
+    }
+
+    function getFunctionCode(functionName) {
+        switch (functionName) {
+            case 'variaveisTiposdeDados':
+                return `
+function variaveisTiposdeDados() {
+    let nome = window.prompt("DIGITE O SEU NOME: ");
+    let idade = window.prompt("DIGITE A SUA IDADE: ");
+    let retorno = console.log(\`Olá, o meu nome é \${nome} e eu tenho \${idade} anos\`);
+}`;
+            case 'operadores':
+                return `
+function operadores() {
+    let numero1 = parseFloat(window.prompt("Digite o primeiro número das operações: "));
+    let numero2 = parseFloat(window.prompt("Digite o segundo número das operações: "));
+    let soma = (numero1 + numero2);
+    let subtracao = (numero1 - numero2);
+    let multiplicacao = (numero1 * numero2);
+    let divisao = (numero1 / numero2);
+
+    console.log(\`A soma é: \${soma}\\nA subtração é: \${subtracao}\\nA multiplicação é: \${multiplicacao}\\nA divisão é: \${divisao}\`);
+}`;
+            case 'condicoes':
+                return `
+function condicoes() {
+    let idade = parseInt(window.prompt("Digite a sua idade: "));
+    if (idade >= 18) {
+        console.log("Parabéns, você já pode ser preso!");
+    } else if (idade < 18) {
+        console.log("Você ainda é menor de idade...");
+    } else if (isNaN(idade)) {
+        console.log("Digite uma idade válida, mocorongo!");
+    }
+}`;
+            case 'loops':
+                return `
+function loops() {
+    for (let i = 1; i <= 100; i++) {
+        console.log(i);
+    }
+}`;
+            case 'funcoes':
+                return `
+function funcoes(numero1, numero2) {
+    let soma = numero1 + numero2;
+    console.log(\`A soma é: \${soma}\`);
+}`;
+            case 'arrays':
+                return `
+function arrays() {
+    let frutas = ["Banana", "Uva", "Mamão", "Abacaxi", "Pera"];
+    for (let i = 0; i < frutas.length; i++) {
+        console.log(frutas[i]);
+    }
+}`;
+            case 'exibeLivro':
+                return `
+function livro(titulo, autor, np) {
+    let obj = {
+        'titulo': titulo,
+        'autor': autor,
+        'numeroDePaginas': np
+    };
+    return obj;
+}
+
+function exibeLivro() {
+    var l1 = livro("Harry Potter: e a ordem da fênix", "J.K. Rowling", 1458);
+    console.log(l1.titulo);
+    console.log(l1.autor);
+    console.log(l1.numeroDePaginas);
+}`;
+            case 'usandoDOM':
+                return `
+function usandoDOM() {
+    let btnDom = document.querySelector('#btdom');
+    btnDom.addEventListener('click', usandoDOM);
+    console.log("Você Clicou no botão do DOM!");
+}`;
+            case 'manipulandoString':
+                return `
+function manipulandoString() {
+    let palavra = prompt("Digite uma palavra: ");
+    let separa = palavra.split(" ");
+    
+    separa.map((palavra) => { 
+        console.log(palavra[0].toUpperCase() + palavra.substring(1)); 
+    }).join(" ");
+}`;
+            case 'usandoFetch':
+                return `
+function usandoFetch() {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(promisse => promisse.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+}`;
+            default:
+                return 'Função não encontrada.';
+        }
+    }
+</script>
+</html>
