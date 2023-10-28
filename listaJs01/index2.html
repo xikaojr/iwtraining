@@ -33,10 +33,14 @@
         const code = getFunctionCode(functionName);
         codeContainer.textContent = code;
     }
-
+    
     function tryIt(){
         let rodando = document.getElementById('codeContainer')
-            
+        const tranformandoArray = rodando.textContent
+        var minhaFuncao = new Function(tranformandoArray);
+        var resultado = minhaFuncao()  
+        return resultado
+
     }
 
     function getFunctionCode(functionName) {
@@ -46,7 +50,7 @@
 function variaveisTiposdeDados() {
     let nome = window.prompt("DIGITE O SEU NOME: ");
     let idade = window.prompt("DIGITE A SUA IDADE: ");
-    let retorno = console.log(\`Olá, o meu nome é \${nome} e eu tenho \${idade} anos\`);
+    console.log(\`Olá, o meu nome é \${nome} e eu tenho \${idade} anos\`);
 }`;
             case 'operadores':
                 return `
