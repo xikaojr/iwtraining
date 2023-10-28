@@ -1,6 +1,8 @@
 Link para curso javascript (Assitir se possível para próxima aula já vim CALIBRADO)
 link: https://youtube.com/watch?v=i6Oi-YtXnAU
 
+Link para instalar o git dentro do cmd do windows(Power Shell)
+
 - Pendencias:
 
 APAGAR A BRANCH DO PC (LOCAL)
