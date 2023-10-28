@@ -19,6 +19,8 @@
     
     <pre id="codeContainer">
         <!-- O código JavaScript será exibido aqui -->
+
+        <button onclick="tryIt()">Try it</button>
     </pre>
 </body>
 
@@ -29,6 +31,10 @@
 
         const code = getFunctionCode(functionName);
         codeContainer.textContent = code;
+    }
+
+    function tryIt(){
+        console.log(functionName.lenght)
     }
 
     function getFunctionCode(functionName) {
