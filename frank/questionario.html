@@ -9,142 +9,110 @@
 </head>
 
 <body>
-    <!-- 
-#Loops: Crie um loop que imprima todos os números de 1 a 100.
 
-#Arrays: Escreva um programa que declare um array de suas frutas favoritas e imprima cada fruta na lista usando um loop.
-
-#Objetos: Crie um objeto que represente um livro, com propriedades para título, autor e número de páginas. Imprima cada propriedade no console.
-
-#Manipulação de Strings: Escreva uma função que receba uma string e retorne a mesma string, mas com a primeira letra de cada palavra em maiúsculas.
-
-#Promises e Fetch API: Use a Fetch API para fazer uma chamada para uma API pública (como a API do JSONPlaceholder) e exibir os resultados no console.
-     -->
-    <!-- PRIMEIRO ITEM -->
-
-    <h1>Questões práticas de JS</h1>
-
-    <h2>Questão 001</h2>
-
-    <p>
-        Variáveis e tipos de dados: Escreva um programa que declare duas variáveis, “nome” e “idade”, e as imprima em um
-        console em uma frase que diga “Olá, meu nome é [nome] e eu tenho [idade] anos”.
-    </p>
-    <button onclick="hello()"> primeira questão</button>
-
-    <!-- SEGUNDO ITEM -->
-    <h2>Questão 002</h2>
-    <p>
-
-        #Operadores: Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração,
-        multiplicação e divisão desses números.
-    </p>
-    <button onclick="calcular()">segunda questao</button>
-
-    <!-- TERCEIRO ITEM -->
-    <h2>Questão 003</h2>
-    <p>
-        #Condições: Escreva um programa que pergunte ao usuário sua idade e imprima se ele é maior ou menor de idade.
-    </p>
-    <button onclick="testar()">terceira questao</button>
-
-    <!-- QUARTO ITEM -->
-    <h2>Questão 004</h2>
-    <p>
-        #Funções: Escreva uma função que aceite dois números como argumentos e retorne sua soma.
-    </p>
-
-    <button onclick="somar()">quarta questão</button>
-
-    <!-- QUINTO ITEM -->
-    <h2>questão 005</h2>
-    <p>
-
-        #Eventos DOM: Crie uma página HTML com um botão que, quando clicado, exiba um alerta que diga “Você clicou no
-        botão!”.
-
-    </p>
-    <button onclick="clicar()">quinta questão</button>
-
-    <script>
-        //função da primeira questão
-        function hello() {
-            var nome = prompt('digite seu nome')
-            var idade = prompt('digite sua idade')
-
-            alert(`Olá, meu nome é ${nome} e eu tenho ${idade} de idade`)
-        }
-
-        // função da segunda questão
-        function calcular() {
-            var numberOne = Number.parseInt(prompt('Digite um número'))
-            var numberTwo = Number.parseInt(prompt('Digite um segundo número'))
-            var total = 0
-
-            var operando = Number.parseInt(prompt('Escolha uma operação a ser realizada: 1(adição) , 2(subtração) , 3(multiplicação) ou 4(divisão).'))
-
-            switch (operando) {
-                case (1):
-                    total = numberOne + numberTwo
-                    alert(`A soma de ${numberOne} e ${numberTwo} é ${total}`)
-
-                    break
-
-                case (2):
-                    total = numberOne - numberTwo
-                    alert(`A diferença de ${numberOne} e ${numberTwo} é ${total}`)
-
-                    break
-                case (3):
-                    total = numberOne * numberTwo
-                    alert(`O produto entre  ${numberOne} e ${numberTwo} é ${total}`)
-
-                    break
-                case (4):
-                    total = numberOne / numberTwo
-                    alert(`O resultado da divisão entre ${numberOne} e ${numberTwo} é ${total}`)
-                default:
-                    alert('opção inválida')
-
-                    break
+    <div class="container">
+        
+        <!-- 
+        #Loops: Crie um loop que imprima todos os números de 1 a 100.
+        
+        #Arrays: Escreva um programa que declare um array de suas frutas favoritas e imprima cada fruta na lista usando um loop.
+        
+        #Objetos: Crie um objeto que represente um livro, com propriedades para título, autor e número de páginas. Imprima cada propriedade no console.
+        
+        #Manipulação de Strings: Escreva uma função que receba uma string e retorne a mesma string, mas com a primeira letra de cada palavra em maiúsculas.
+        
+        #Promises e Fetch API: Use a Fetch API para fazer uma chamada para uma API pública (como a API do JSONPlaceholder) e exibir os resultados no console.
+         -->
+        <!-- PRIMEIRO ITEM -->
+        <h1>Questões práticas de JS</h1>
+        <h2>Questão 001</h2>
+        <p>
+            Variáveis e tipos de dados: Escreva um programa que declare duas variáveis, “nome” e “idade”, e as imprima em um
+            console em uma frase que diga “Olá, meu nome é [nome] e eu tenho [idade] anos”.
+        </p>
+        <button onclick="hello()"> primeira questão</button>
+        <!-- SEGUNDO ITEM -->
+        <h2>Questão 002</h2>
+        <p>
+            #Operadores: Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração,
+            multiplicação e divisão desses números.
+        </p>
+        <button onclick="calcular()">segunda questao</button>
+        <!-- TERCEIRO ITEM -->
+        <h2>Questão 003</h2>
+        <p>
+            #Condições: Escreva um programa que pergunte ao usuário sua idade e imprima se ele é maior ou menor de idade.
+        </p>
+        <button onclick="testar()">terceira questao</button>
+        <!-- QUARTO ITEM -->
+        <h2>Questão 004</h2>
+        <p>
+            #Funções: Escreva uma função que aceite dois números como argumentos e retorne sua soma.
+        </p>
+        <button onclick="somar()">quarta questão</button>
+        <!-- QUINTO ITEM -->
+        <h2>questão 005</h2>
+        <p>
+            #Eventos DOM: Crie uma página HTML com um botão que, quando clicado, exiba um alerta que diga “Você clicou no
+            botão!”.
+        </p>
+        <button onclick="clicar()">quinta questão</button>
+        <script>
+            //função da primeira questão
+            function hello() {
+                var nome = prompt('digite seu nome')
+                var idade = prompt('digite sua idade')
+                alert(`Olá, meu nome é ${nome} e eu tenho ${idade} de idade`)
             }
-        }
-
-        //função da terceira questão
-
-        function testar() {
-            var idade = Number.parseInt(prompt('Digite aqui sua idade'))
-
-            if (idade >= 18) {
-                alert('Indivíduo Maior de Idade')
-            } else {
-                alert('Indivíduo menor de idade')
+            // função da segunda questão
+            function calcular() {
+                var numberOne = Number.parseInt(prompt('Digite um número'))
+                var numberTwo = Number.parseInt(prompt('Digite um segundo número'))
+                var total = 0
+                var operando = Number.parseInt(prompt('Escolha uma operação a ser realizada: 1(adição) , 2(subtração) , 3(multiplicação) ou 4(divisão).'))
+                switch (operando) {
+                    case (1):
+                        total = numberOne + numberTwo
+                        alert(`A soma de ${numberOne} e ${numberTwo} é ${total}`)
+                        break
+                    case (2):
+                        total = numberOne - numberTwo
+                        alert(`A diferença de ${numberOne} e ${numberTwo} é ${total}`)
+                        break
+                    case (3):
+                        total = numberOne * numberTwo
+                        alert(`O produto entre  ${numberOne} e ${numberTwo} é ${total}`)
+                        break
+                    case (4):
+                        total = numberOne / numberTwo
+                        alert(`O resultado da divisão entre ${numberOne} e ${numberTwo} é ${total}`)
+                    default:
+                        alert('opção inválida')
+                        break
+                }
             }
-
-        }
-
-        //função da quarta questão
-        function somar() {
-            var n1 = Number.parseInt(prompt('Digite um numero'))
-            var n2 = Number.parseInt(prompt('Digite um segundo numero'))
-
-            var soma = n1 + n2
-
-            alert(`A soma é ${soma}`)
-
-        }
-        //função da quinta questão
-        function clicar() {
-            alert("Você clicou no botão")
-        }
-
-
-
-
-
-    </script>
-
-
+            //função da terceira questão
+            function testar() {
+                var idade = Number.parseInt(prompt('Digite aqui sua idade'))
+                if (idade >= 18) {
+                    alert('Indivíduo Maior de Idade')
+                } else {
+                    alert('Indivíduo menor de idade')
+                }
+            }
+            //função da quarta questão
+            function somar() {
+                var n1 = Number.parseInt(prompt('Digite um numero'))
+                var n2 = Number.parseInt(prompt('Digite um segundo numero'))
+                var soma = n1 + n2
+                alert(`A soma é ${soma}`)
+            }
+            //função da quinta questão
+            function clicar() {
+                alert("Você clicou no botão")
+            }
+        </script>
+    </div>
 
 </body>
 
