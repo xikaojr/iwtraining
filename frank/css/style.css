@@ -2,38 +2,31 @@
 
     box-sizing: border-box;
 }
+body{
+    background-color: rgba(0, 0, 255, 0.712);
+    color: white;
 
-body {
-    margin: 0;
 }
 
-.navbar {
-    display: flex;
-    flex: row wrap;
-    height: 100px;
-    background-color: aqua;
-}
-
-.logo {
-    width: 20%;
-    padding: 20px;
-    align-items: center;
+h1{
+    text-align: center;
     margin-left: 10%;
-    justify-content: center;
-    border: 1px solid blue;
-}
-
-.menu {
-    align-items: center;
-    justify-content: center;
-    text-align: right;
-    width: 70%;
     margin-right: 10%;
-    padding: 20px;
-    border: 1px solid purple;
+    background-color: rgb(3, 3, 58);
+    padding: 10px;
+    border-radius: 5px;
 }
-
-.menu a {
-    text-decoration: none;
-    padding: 20px 16px;
+h2{
+    text-align: left;
+    margin-left: 100px;
+    background-color: rgb(3, 3, 58);
+    padding: 10px;
+    border-radius: 5px;
+}
+p{
+    text-align: left;
+    margin-left: 100px;
+}
+button{
+    
 }

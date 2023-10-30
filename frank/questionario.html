@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -14,8 +15,6 @@
 #Arrays: Escreva um programa que declare um array de suas frutas favoritas e imprima cada fruta na lista usando um loop.
 
 #Objetos: Crie um objeto que represente um livro, com propriedades para título, autor e número de páginas. Imprima cada propriedade no console.
-
-#Eventos DOM: Crie uma página HTML com um botão que, quando clicado, exiba um alerta que diga “Você clicou no botão!”.
 
 #Manipulação de Strings: Escreva uma função que receba uma string e retorne a mesma string, mas com a primeira letra de cada palavra em maiúsculas.
 
@@ -56,6 +55,16 @@
     </p>
 
     <button onclick="somar()">quarta questão</button>
+
+    <!-- QUINTO ITEM -->
+    <h2>questão 005</h2>
+    <p>
+
+        #Eventos DOM: Crie uma página HTML com um botão que, quando clicado, exiba um alerta que diga “Você clicou no
+        botão!”.
+
+    </p>
+    <button onclick="clicar()">quinta questão</button>
 
     <script>
         //função da primeira questão
@@ -115,14 +124,18 @@
         }
 
         //função da quarta questão
-        function somar(){
+        function somar() {
             var n1 = Number.parseInt(prompt('Digite um numero'))
             var n2 = Number.parseInt(prompt('Digite um segundo numero'))
 
-            var soma = n1+n2
+            var soma = n1 + n2
 
             alert(`A soma é ${soma}`)
 
+        }
+        //função da quinta questão
+        function clicar() {
+            alert("Você clicou no botão")
         }
 
 
