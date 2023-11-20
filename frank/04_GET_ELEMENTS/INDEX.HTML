@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>004 GET ELEMENTS</title>
+
+    <style>
+        .cor-vermelha-texto{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h3 class="cor-vermelha-texto"> títulos em HTML</h3>
+
+    <p class="cor-vermelha-texto">Parágrafo de HTML</p>
+    <p id="texto_2">Parágrafo de HTML</p>
+
+    <div  name="esta_div">
+        Este texto está dentro de uma div
+    </div>
+
+    <form action="" method="post">
+        <input type="text" name="texto_usuario" id="">
+    </form>
+
+    <script>
+        /*
+        getElementById
+
+        getElementsByName
+        getElementsByClassName
+        getElamentsByTagName
+        */
+        // //retorna o textto do element
+    
+      
+        // document.getElementById('titulo').textContent='NOVO TIULO'
+  
+        //vai mostrar no console um Nodelist com todas as propriedades da div desse exemplo
+        // console.log(document.getElementsByName('esta_div'))
+
+        // console.log(document.getElementsByName('texto_usuario'))
+        // // a linha acima vai apresentar outro Nodelist porém do tipo input
+
+
+        // console.log(document.getElementsByTagName('p'))
+        // //exibe todos os paragrafos no console
+       
+
+        //document.getElementsByTagName('p')[0].innerText='frank sena'
+        //  uma vez que se seleciona todas as tag cada tag possui um indice[posição]
+        // como um array e como em todo array , pra selecionar um element especifico da lista para alteração , a posição deve ser especificada.
+
+
+        console.log(document.getElementsByClassName('cor-vermelha-texto'))
+        //exibe os elementos que estiverem fazendo uso da class
+        
+    </script>
+    
+</body>
+</html>
