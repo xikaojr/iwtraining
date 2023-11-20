@@ -24,3 +24,10 @@ textoprincipal.addEventListener('keyup', () => {
 
 })
 
+
+textoprincipal.addEventListener('onchange',()=>{
+
+
+caixadois.innerText = textoprincipal.value;
+})
+
