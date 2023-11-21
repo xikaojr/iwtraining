@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selector</title>
+
+    <style>
+
+            .primeira-div{
+                font-weight: bold;
+                font-size: 16px;
+                color:blue;
+            }
+
+            ul>li:last-child{
+                color:green;
+            }
+
+    </style>
+</head>
+<body>
+
+
+
+    <p id="primeiro">Primeiro parágrafo</p>
+
+    <p id="segundo">Segundo parágrafo</p>
+
+    <div class="primeira-div">
+        Texto 1 dentro da div 
+    </div>
+
+    <div>
+        Texto 2 dentro da div
+    </div>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+
+    <script>
+        /*
+        querySelector-- vai buscar um unico elemeto
+        querySelectorAll-- vários
+        
+        */
+
+        let e= document.querySelector('ul>li:last-child')
+        console.log(e)
+
+        //retorna uma coleção(Nodelist) com todas as div
+        let b = document.querySelectorAll('div')
+        console.log(b)
+    </script>
+    
+</body>
+</html>
