@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 POSICIONANDO ELEMENTOS</title>
+
+    <style>
+        .container{
+            border: 1px solid lightgray;
+            padding: 20px;
+            margin:20px;
+        }
+
+        p{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        Dentro da div
+    </div>
+
+    <script>
+        let div = document.querySelector('.container')
+
+        // //adicionando um texto antes do div
+        // div.before('aaaa')
+
+        // //adicionar texto dentro do div mas no inicio da div
+        // div.prepend('bbbbbbbbbbbbb')
+
+        // //adicionar um texto dentro do div mas no FIM
+
+        // div.append('frank')
+
+        // // adicionar um texto depois da div
+        // div.after('um texto fora da div e depois dela')
+
+        // //esses mesmos métodos podem ser usados para adicionar textos e tabem adicionar elementos
+
+        var p1 = document.createElement('p')
+        var p2 = document.createElement('p')
+        var p3 = document.createElement('p')
+        var p4 = document.createElement('p')
+
+        p1.innerText='paragrafo 1'
+        p2.innerText='paragrafo 2 '
+        p3.innerText='paragrafo 3 '
+        p4.innerText='paragrafo 4'
+
+        div.after(p4);
+        div.before(p2);
+        div.append(p1)
+        div.prepend(p3)
+    </script>
+
+    
+</body>
+</html>
