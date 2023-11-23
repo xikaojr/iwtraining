@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+/* 
+obs: não há necessidade desse arquivo css, ele serve tão somente para
+treino em um componente específico.
+*/
+/* reset das configurações */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estrutura/caica/container */
+.header-dois{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+/* textos */
+.headline-quemsomos{
+    flex: 40%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    color:rgb(65 , 60, 137);
+    font-family: 'Roboto',sans-serif;
+}
+
+.headline-quemsomos h2{
+    
+    font-size: 80px;
+}
+.head-img-quemsomosp{
+    text-align: justify;
+    font-size: 20px;
+}
+/* imagens */
+
+.head-img-quemsomos{
+    display: flex;
+    justify-content: center;
+    flex: 40%;
+    margin-right: 10%;
+    
+}
+
+.head-img-quemsomos img{
+    max-width: 60%;
+}
+
+/* fim da sessão sobre nós */
+/* inicio da sessão produtos */
+
