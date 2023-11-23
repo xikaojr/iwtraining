@@ -1,0 +1,132 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+/* inicio do navbar */
+.navbar{
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    height: 150px;
+    align-items: center;
+   
+}
+
+.logotipo{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    flex: 20%;  
+    color:rgb(65, 60, 137) ;
+    font-family: 'Oxygen',sans-serif;
+}
+.logotipo img{
+    width: auto;
+    height: 100px;
+    margin-left: 40px;
+    border-radius: 2px solid rgb (57,134,230);
+}
+
+.menu{
+    margin-right: 5%;
+    flex: 60%;
+    text-align:right ;
+}
+.menu a{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    color: rgb(65, 60, 137);
+
+}
+.menu a:hover{
+    border-bottom: 5px solid  rgb(65, 60, 137);
+    text-transform: 0.5;
+    
+    color: rgb(58, 155, 232);
+}
+/* fim do navbar */
+
+/* inicio do header */
+
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#clique-aqui{
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(58, 155, 232);
+    border-radius: 5px;
+    padding: 20px;
+    color:white ;
+    font-size: 40px;
+}
+
+#clique-aqui:hover{
+    background-color: rgb(65, 60, 137);
+}
+.headline{
+margin-left: 10%;
+flex: 40%;
+
+   
+}
+.headline h2{
+    color: rgb(65, 60, 137);
+}
+
+.img-headline{
+
+   margin-right: 10%;
+   flex: 40%;
+}
+
+.img-headline img{
+   
+    
+    box-shadow: 2px 2px 5px rgb(65, 60, 137);
+}
+
+/* FIM DO HEADER */
+/* INICIO DO FOOTER */
+.footer{
+    margin-top: 100px;
+    border-top: 5px solid rgb(58, 155, 232);
+    height: 220px;
+    text-align: center;
+    width: auto;
+   
+    background-color: rgb(1, 74, 117);
+}
+
+.footer h2{
+    padding-top: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer img{
+    display: inline-block;
+    margin: 30px 20px;
+
+    max-width: 5%;
+    border-radius: 50%;
+}
+
