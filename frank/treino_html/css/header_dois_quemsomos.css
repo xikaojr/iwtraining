@@ -52,7 +52,20 @@ treino em um componente específico.
 .head-img-quemsomos img{
     max-width: 60%;
 }
+/* css da página projeto */
 
-/* fim da sessão sobre nós */
-/* inicio da sessão produtos */
-
+.projeto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 40%;
+}
+.projeto img{
+    max-width: 30%;
+    
+}
+.projeto h2{
+    color: rgb(65, 60, 137);
+}
