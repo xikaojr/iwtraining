@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando eventlistener</title>
+</head>
+<body>
+
+    <h1 id="titulo_1">Título 1</h1>
+    <h1 id="titulo_2">Título 2</h1>
+
+    <button id="adicionar">Adicionar evento</button>
+    <button id="botao">Executar evento</button>
+    <button id="remover">Remover evento</button>  
+    
+    <script>
+        document.querySelector('#adicionar').addEventListener('click',adicionar_eventos);
+        document.querySelector('#remover').addEventListener('click',remover_eventos);
+
+        //a sequencia de passo aqui é que o botao adicionar eventos -ADICIONE DOIS EVENTOS NO BOTAO EXECUTAR
+        // quando esses eventos e tão somente quando eles forem adicionados, aí sim vai haver de fato uma funcionalidade dentro do EXECUTAR.
+
+        // Primeiro
+        // crie uma função para o botão adicionar eventos
+
+        function adicionar_eventos(){
+            let e = document.querySelector('#botao');
+            // dentro dessa funçao vai haver uma chamada para outros dois eventos diferentes
+            // esses eventos devem ser chamados atraves de listener
+            e.addEventListener('click', executar_1);
+            e.addEventListener('click',executar_2);
+            
+        }
+
+        //função executar_1
+        //cria um objeto do tipo Date chamado agora
+        //muda o conteudo do primeiro título para o valor dos  segundos em tempo real
+        function executar_1(){
+            let agora = new Date();
+            document.querySelector("#titulo_1").textContent= agora.getUTCSeconds();
+            console.log('alou1')
+        }
+
+         //função executar_1
+        //cria um objeto do tipo Date chamado agora
+        //muda o conteudo do primeiro título para o valor dos  segundos em tempo real
+        function executar_2(){
+            let agora = new Date();
+            document.querySelector("#titulo_2").textContent= agora.getUTCSeconds();
+            console.log('alou2')
+        }
+
+            // está mudando a funcionalidade do botao EXECUTAR e retirando do botão a função executar_2 que foi criada lá no  adicionar_eventos -removendo do botão  a troca de value do segundo titulo.
+        function remover_eventos(){
+            document.querySelector('#botao').removeEventListener('click',executar_2)
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
