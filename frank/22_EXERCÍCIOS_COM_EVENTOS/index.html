@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 022</title>
+</head>
+<body>
+    <p>Troque a cor do background do título abaixo e o valor do título do button</p>
+
+    <h1>Título 1</h1>
+    <button id="botaoCor">Fundo amarelo</button>
+
+    <script>
+
+        var b = document.querySelector('#botaoCor');
+
+        b.addEventListener('click', (e)=>{
+            let texto = document.querySelector('h1');
+
+        if(texto.style.background==''){
+            texto.style.background ="yellow";
+            e.target.textContent='fundo amarelo'
+        }else{
+            texto.style.background="";
+            e.target.textContent='fundo branco'
+        }
+
+
+
+
+
+        })
+
+       
+
+
+
+
+
+    </script>
+
+
+
+
+    <!-- <script>
+        let botaoCor = document.querySelector('#botaoCor')
+        botaoCor.addEventListener('click',()=>{
+            document.querySelector('h1').style.background='yellow'
+    
+        })
+        if(('h1').style.background='yellow'){
+
+            botaoCor.addEventListener('click',()=>{
+                document.querySelector('h1').style.background ='white'
+            })
+        }
+    </script> -->
+    
+</body>
+</html>
