@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução aos eveentos em javascript</title>
+
+    <style>
+        h1{
+            margin: 50px auto;
+        }
+
+        .centrar{
+                text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="centrar">
+        <h1>Texto Original html</h1>
+        <button onclick="alterar_texto()">Clique aqui</button>
+        <p>tambem posso alterar aqui</p>
+    </div>
+
+    <script>
+        function alterar_texto(){
+            document.querySelector('h1').textContent='Texto alterado no evento onclick'
+        }
+
+        document.querySelector('p').onclick= function(){
+            document.querySelector('h1').textContent ='Também posso alterar o teto clicando no parágrafo'
+        }
+    </script>
+    
+</body>
+</html>
