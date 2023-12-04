@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+
+        .card {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .card img {
+            width: 100%;
+            /* Ajusta a largura da imagem para preencher o contêiner */
+            border-radius: 8px;
+            margin-bottom: 10px;
+            max-width: 100%;
+            /* Define a largura máxima da imagem */
+            height: auto;
+            /* Permite ajustar a altura proporcionalmente */
+            display: block;
+            /* Remove espaços extras abaixo da imagem */
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            /* Limita o número de linhas para evitar que o texto fique muito grande */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Define o número máximo de linhas exibidas */
+            -webkit-box-orient: vertical;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            /* Limita o número de linhas para evitar que o texto fique muito grande */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            /* Define o número máximo de linhas exibidas */
+            -webkit-box-orient: vertical;
+        }
+
+        .card .episodes-list {
+            list-style: none;
+            padding: 0;
+            max-height: 220px;
+            overflow: auto;
+            margin-top: 10px;
+        }
+
+        .card .episodes-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card .episodes-list li:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="" alt="Nome do Personagem">
+            <h2></h2>
+            <p></p>
+            <ul class="episodes-list">
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        const executaFetch = (url) => {
+            return fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro na requisição');
+                    }
+                    return response.json();
+                })
+                .catch(error => {
+                    console.error('Erro na requisição:', error);
+                    throw error;
+                });
+        }
+
+        const organizaPersonagens = (personagens) => {
+            // const personagensOrdenado = personagens.reduce(
+            //     (acumulador, valorAtual) => {
+            //         if (valorAtual.status === 'Alive') {
+            //             acumulador.alive.push(valorAtual);
+            //         } else {
+            //             acumulador.unknown.push(valorAtual);
+            //         }
+            //         return acumulador;
+            //     },
+            //     { alive: [], unknown: [] }
+            // );
+
+            // return personagensOrdenado;
+        }
+
+        const montaTabelaPersonagens = (personagens) => {
+            const cardOriginal = document.querySelector('.card'); // Seleciona o primeiro card original
+
+            personagens.forEach((elemento, indice) => {
+                let cardClone = cardOriginal.cloneNode(true); // Clona o card original
+                cardClone.querySelector('img').setAttribute('src', elemento.image);
+                cardClone.querySelector('h2').textContent = elemento.name;
+                cardClone.querySelector('p').innerHTML = '<b>' + (elemento.status == 'Alive' ? 'Vivo' : 'Morto') + '</b>';
+                montaListaEpisodios(cardClone, elemento.episode);
+                document.querySelector('.container').appendChild(cardClone); // Adiciona o card clonado à página
+            });
+
+            // Remove o card original
+            cardOriginal.remove();
+        }
+
+        const montaListaEpisodios = (cardClone, listaEpisodios) => {
+            const ulPrincipal = cardClone.querySelector(".episodes-list"); // Corrige a seleção da lista de episódios
+
+            listaEpisodios.forEach(ep => {
+                executaFetch(ep).then(episode_info => {
+                    if (episode_info && Object.keys(episode_info).length !== 0) {
+                        let _li = document.createElement('li');
+                        _li.innerHTML = `EP ${episode_info.id} <b>${episode_info.name}</b> [${episode_info.episode}] - Exibido em: <b>${episode_info.air_date}</b>`;
+                        ulPrincipal.appendChild(_li);
+                    }
+                });
+            });
+        }
+
+        let executaApi = () => {
+            const url = `https://rickandmortyapi.com/api/character`;
+            executaFetch(url).then(data => {
+                const personagens = data.results;
+                montaTabelaPersonagens(personagens);
+            });
+        }
+        executaApi();
+    </script>
+</body>
+
+</html>
