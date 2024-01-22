@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de funcionário</title>
+</head>
+
+<body>
+    <h1>Cadastro de funcionários</h1>
+    <form class="form" action="" onsubmit="cadastraFuncionario(event, this)">
+        <div style="min-width: 500px;">
+            <label for="nome">Nome:</label>
+            <input style="width: 200px;" placeholder="Digite o nome do funcionário" id="nome" type="text" class="nome"
+                name="nome">
+        </div>
+        <div style="min-width: 500px; margin-top: 10px;">
+            <label for="funcao">Função:</label>
+            <input id="funcao" style="width: 192px;" placeholder="Digite sua função na empresa" type="text"
+                class="funcao" name="funcao">
+        </div>
+        <div style="min-width: 500px; margin-top: 10px;">
+            <button type="submit">Salvar</button>
+            <button type="button" onclick="document.querySelector('.form').reset()">Limpar</button>
+        </div>
+    </form>
+    <hr />
+    <div>
+        <h3>Listagem dos funcionários</h3>
+
+        <select name="list_funcionarios" id="list_funcionarios" class="list_funcionarios">
+            <option value="" selected>Funcionários cadastrados</option>
+        </select>
+        <button type="button" onclick="deletaFuncionario()">
+            Remover Selecionado
+        </button>
+        <button type="button" onclick="removerFuncionariosCadastrados()">
+            Deletar todos os funcionários
+        </button>
+    </div>
+    <script>
+        const selecaoSelect = document.querySelector('#list_funcionarios');
+
+        const cadastraFuncionario = (event, form) => {
+            event.preventDefault();
+            let chave = localStorage.length + 1;
+            const nome = form.nome.value;
+            const funcao = form.funcao.value;
+
+            if (null === localStorage.getItem(chave)) {
+                let funcionarioObjeto = { chave, nome, funcao }
+                localStorage.setItem(chave, JSON.stringify(funcionarioObjeto))
+            }
+
+            montaListaFuncionarios(true);
+            form.reset()
+            alert('Funcionario cadastrado com sucesso!')
+        }
+
+        const montaListaFuncionarios = (novo_item = false) => {
+            if (novo_item === true) {
+                selecaoSelect.appendChild(criaOption(JSON.parse(localStorage.getItem(localStorage.length))));
+            } else {
+                let items = obterTodosOsItensStorage();
+                
+                //Usando Foreach
+                items.forEach(element => {
+                    selecaoSelect.appendChild(criaOption(element));
+                });
+
+                //Usando For
+                // for (let i = 0; i <= items.length; i++) {
+                //     selecaoSelect.appendChild(criaOption(items[i]));
+                // }
+            }
+        }
+
+        const criaOption = (item_lista) => {
+            let option = document.createElement('option');
+            option.value = item_lista.chave;
+            option.innerHTML = `${item_lista.chave}: ${item_lista.nome} - ${item_lista.funcao}`;
+            return option;
+        }
+
+        const deletaFuncionario = () => {
+            if (window.confirm('Deseja realmente deletar este funcionário ?')) {
+                let data = JSON.parse(localStorage.getItem(selecaoSelect.value));
+                localStorage.removeItem(selecaoSelect.value);
+                selecaoSelect.remove(selecaoSelect.value);
+            }
+        }
+
+        const removerFuncionariosCadastrados = () => {
+            localStorage.clear();
+            let selectElement = document.querySelector('.list_funcionarios')
+            var options = selectElement.getElementsByTagName('option');
+            for (let i = options.length - 1; i > 0; i--) {
+                selectElement.remove(i);
+            }
+        }
+
+        const obterTodosOsItensStorage = () => {
+            let itens = [];
+
+            for (let i = 0; i < localStorage.length; i++) {
+                let chave = localStorage.key(i);
+                let valor = localStorage.getItem(chave);
+                let objeto = JSON.parse(valor);
+                itens.push(objeto);
+            }
+            return itens;
+        }
+
+        montaListaFuncionarios();
+    </script>
+</body>
+
+</html>
