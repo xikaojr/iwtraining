@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de funcionário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Cadastro de funcionários</h1>
+        <form class="form" action="" onsubmit="cadastraFuncionario(event, this)">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label for="nome">Nome:</label>
+                    <input placeholder="Digite o nome do funcionário" id="nome" type="text" class="form-control"
+                        name="nome">
+                </div>
+                <div class="col-4">
+                    <label for="funcao">Função:</label>
+                    <input id="funcao" placeholder="Digite sua função na empresa" type="text" class="form-control"
+                        name="funcao">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <button class="btn btn-success" type="submit">Salvar</button>
+                    <button class="btn btn-dark" type="button"
+                        onclick="document.querySelector('.form').reset();">Limpar</button>
+                </div>
+            </div>
+        </form>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-12">
+                <h3>Listagem dos funcionários</h3>
+                <table id="table_funcionarios" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Chave</td>
+                            <td>Nome</td>
+                            <td>Função</td>
+                            <td>Ação</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button class="btn btn-danger" type="button" onclick="removerFuncionariosCadastrados()">
+                    Deletar todos os funcionários
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tableFuncionarios = document.querySelector('#table_funcionarios');
+
+        const cadastraFuncionario = (event, form) => {
+            event.preventDefault();
+
+            let chave = retornaUltimaChaveStorage();
+            const nome = form.nome.value;
+            const funcao = form.funcao.value;
+            let deletaFuncionario = "";
+
+            if (localStorage.getItem(chave) === null) {
+                let funcionarioObjeto = { chave, nome, funcao, deletaFuncionario }
+                localStorage.setItem(chave, JSON.stringify(funcionarioObjeto))
+                montaListaFuncionarios();
+                form.reset()
+                alert('Funcionario cadastrado com sucesso!')
+            } else {
+                alert("Item já cadastrado, remova-o e crie novamente!");
+                return false;
+            }
+        }
+        const montaListaFuncionarios = () => {
+            tableFuncionarios.tBodies[0].innerHTML = '';
+            let items = obterTodosOsItensStorage();
+            items.sort((a, b) => a.chave - b.chave);
+            items.forEach(element => {
+                criaLinha(element.chave)
+            });
+        }
+        const criaLinha = (chave_item) => {
+            let item = JSON.parse(localStorage.getItem(chave_item))
+            let novaLinha = document.createElement('tr');
+
+            Object.keys(item).forEach(chave_objeto => {
+                let novaColuna = document.createElement('td');
+                novaColuna.innerHTML = item[chave_objeto];
+                novaLinha.setAttribute('key', item['chave'])
+
+                if(chave_objeto == 'deletaFuncionario'){
+                    novaColuna.appendChild(criaBotaoRemocaoLinha(item['chave']));
+                }
+                
+                novaLinha.appendChild(novaColuna);
+                tableFuncionarios.tBodies[0].appendChild(novaLinha);
+            });
+        }
+        const deletaFuncionario = (chave) => {
+            if (window.confirm('Deseja realmente deletar este funcionário ?')) {
+                let data = JSON.parse(localStorage.getItem(chave));
+                localStorage.removeItem(data.chave);
+                montaListaFuncionarios();
+            }
+        }
+        const removerFuncionariosCadastrados = () => {
+            localStorage.clear();
+            tableFuncionarios.tBodies[0].innerHTML = '';
+        }
+        const obterTodosOsItensStorage = () => {
+            let itens = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                let chave = localStorage.key(i);
+                let valor = localStorage.getItem(chave);
+                let objeto = JSON.parse(valor);
+                itens.push(objeto);
+            }
+            return itens;
+        }
+        const retornaUltimaChaveStorage = () => {
+            let maiorChave = 0;
+
+            // Vasculha todas as chaves no Local Storage
+            for (let i = 0; i < localStorage.length; i++) {
+                // Obtém a chave atual
+                let chaveAtual = localStorage.key(i);
+
+                // Verifica se a chave atual é um número
+                if (!isNaN(chaveAtual)) {
+                    // Converte a chave para um número
+                    let chaveNumerica = Number(chaveAtual);
+
+                    // Se a chave numérica for maior que a maior chave atual, atualiza a maior chave
+                    if (chaveNumerica > maiorChave) {
+                        maiorChave = chaveNumerica;
+                    }
+                }
+            }
+
+            // Incrementa a maior chave
+            maiorChave++;
+            return maiorChave;
+        }
+        const criaBotaoRemocaoLinha = (chave) => {
+            let botao = document.createElement('button');
+
+            botao.setAttribute('class', 'btn btn-danger');
+            botao.setAttribute('type', 'button');
+            botao.setAttribute('onclick', 'deletaFuncionario('+ chave +')');
+
+            botao.innerText = 'X';
+            return botao;
+        }
+        montaListaFuncionarios();
+    </script>
+</body>
+</html>
