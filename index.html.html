@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de funcionário</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .table tbody td:last-child button:last-child {
+            margin-left: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
         <h1>Cadastro de funcionários</h1>
-        <form class="form" action="" onsubmit="cadastraFuncionario(event, this)">
+        <form class="form" id="form_funcionarios" action="" onsubmit="cadastraFuncionario(event, this)">
+            <input type="hidden" name="chave" id="chave">
             <div class="form-group row">
                 <div class="col-4">
                     <label for="nome">Nome:</label>
@@ -48,7 +56,7 @@
                     </tbody>
                 </table>
                 <button class="btn btn-danger" type="button" onclick="removerFuncionariosCadastrados()">
-                    Deletar todos os funcionários
+                    Deletar todos os funcionários <i class="fa fa-trash"></i>
                 </button>
             </div>
         </div>
@@ -58,22 +66,22 @@
 
         const cadastraFuncionario = (event, form) => {
             event.preventDefault();
-
             let chave = retornaUltimaChaveStorage();
+
+            if (form.chave.value) {
+                chave = form.chave.value;
+                form.chave.value = '';
+            }
+
             const nome = form.nome.value;
             const funcao = form.funcao.value;
-            let deletaFuncionario = "";
+            let acoesFuncionario = "";
+            let funcionarioObjeto = { chave, nome, funcao, acoesFuncionario }
 
-            if (localStorage.getItem(chave) === null) {
-                let funcionarioObjeto = { chave, nome, funcao, deletaFuncionario }
-                localStorage.setItem(chave, JSON.stringify(funcionarioObjeto))
-                montaListaFuncionarios();
-                form.reset()
-                alert('Funcionario cadastrado com sucesso!')
-            } else {
-                alert("Item já cadastrado, remova-o e crie novamente!");
-                return false;
-            }
+            localStorage.setItem(chave, JSON.stringify(funcionarioObjeto))
+            form.reset()
+            montaListaFuncionarios();
+            alert('Funcionario cadastrado com sucesso!')
         }
         const montaListaFuncionarios = () => {
             tableFuncionarios.tBodies[0].innerHTML = '';
@@ -92,20 +100,14 @@
                 novaColuna.innerHTML = item[chave_objeto];
                 novaLinha.setAttribute('key', item['chave'])
 
-                if(chave_objeto == 'deletaFuncionario'){
+                if (chave_objeto == 'acoesFuncionario') {
                     novaColuna.appendChild(criaBotaoRemocaoLinha(item['chave']));
+                    novaColuna.appendChild(criaBotaoEdicaoLinha(item['chave']));
                 }
-                
+
                 novaLinha.appendChild(novaColuna);
                 tableFuncionarios.tBodies[0].appendChild(novaLinha);
             });
-        }
-        const deletaFuncionario = (chave) => {
-            if (window.confirm('Deseja realmente deletar este funcionário ?')) {
-                let data = JSON.parse(localStorage.getItem(chave));
-                localStorage.removeItem(data.chave);
-                montaListaFuncionarios();
-            }
         }
         const removerFuncionariosCadastrados = () => {
             localStorage.clear();
@@ -150,12 +152,43 @@
 
             botao.setAttribute('class', 'btn btn-danger');
             botao.setAttribute('type', 'button');
-            botao.setAttribute('onclick', 'deletaFuncionario('+ chave +')');
+            botao.setAttribute('title', 'Remover Funcionário');
+            botao.setAttribute('onclick', 'deletaFuncionario(' + chave + ')');
 
-            botao.innerText = 'X';
+            botao.innerHTML = "<i class='fa fa-trash'></i>";
             return botao;
         }
+        const criaBotaoEdicaoLinha = (chave) => {
+            let botao = document.createElement('button');
+
+            botao.setAttribute('class', 'btn btn-primary');
+            botao.setAttribute('title', 'Editar Funcionário');
+            botao.setAttribute('type', 'button');
+            botao.setAttribute('onclick', 'editaFuncionario(' + chave + ')');
+
+            botao.innerHTML = "<i class='fa fa-edit'></i>";
+            return botao;
+        }
+        const deletaFuncionario = (chave) => {
+            if (window.confirm('Deseja realmente deletar este funcionário ?')) {
+                let data = JSON.parse(localStorage.getItem(chave));
+                localStorage.removeItem(data.chave);
+                montaListaFuncionarios();
+            }
+        }
+        const editaFuncionario = (chave) => {
+            let data = JSON.parse(localStorage.getItem(chave));
+
+            if (data !== null) {
+                let form = document.getElementById("form_funcionarios");
+                form.nome.value = data.nome;
+                form.funcao.value = data.funcao;
+                form.chave.value = data.chave;
+            }
+        }
+
         montaListaFuncionarios();
     </script>
 </body>
+
 </html>
